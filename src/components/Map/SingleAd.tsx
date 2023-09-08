@@ -13,8 +13,22 @@ export const SingleAd = (props: Props) => {
             const res = await fetch(`http://localhost:3001/ad/${props.id}`)
             const data = await res.json();
             setAd(data);
+            // setViews(prevState => prevState++);
+            // const res2 = await fetch(`http://localhost:3001/ad`, {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify({
+            //         ...data,
+            //         views,
+            //     })
+            // })
         })();
     }, []);
+
+
+
 
     if (ad === null) {
         return <p>Wczytywanie...</p>
@@ -28,6 +42,7 @@ export const SingleAd = (props: Props) => {
         <p><a href={ad.url1} target="_blank">{ad.url1}</a></p>
         {!!ad.url2 && <p><a href={ad.url2} target="_blank">{ad.url2}</a></p>}
         {!!ad.url3 && <p><a href={ad.url3} target="_blank">{ad.url3}</a></p>}
+        <p>Liczba odsłon: {ad.views}</p>
     </>
 
 

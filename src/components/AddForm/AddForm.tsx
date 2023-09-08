@@ -15,6 +15,7 @@ export const AddForm = () => {
         url2: '',
         url3: '',
         address: '',
+        views: 0,
     });
 
     const saveAd = async (e: SyntheticEvent) => {
