@@ -23,7 +23,7 @@ export const Map = () => {
     }, [search]);
 
     const updateViews = async (id: string): Promise<void> => {
-        await fetch(`http://localhost:3001/ad/${id}`, {
+        await fetch(`http://localhost:3001/ad/update-views/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'

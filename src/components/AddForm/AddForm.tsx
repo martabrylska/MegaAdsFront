@@ -16,6 +16,7 @@ export const AddForm = () => {
         url3: '',
         address: '',
         views: 0,
+        accepted: false,
     });
 
     const saveAd = async (e: SyntheticEvent) => {
