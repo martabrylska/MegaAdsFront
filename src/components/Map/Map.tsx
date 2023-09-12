@@ -22,6 +22,15 @@ export const Map = () => {
         })();
     }, [search]);
 
+    const updateViews = async (id: string): Promise<void> => {
+        await fetch(`http://localhost:3001/ad/update-views/${id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+        });
+    }
+
     return <div className="map">
         <MapContainer center={[50.2657152, 18.9945088]} zoom={20}>
             <TileLayer
@@ -31,7 +40,15 @@ export const Map = () => {
 
             {
                 ads.map(ad => (
-                    <Marker key={ad.id} position={[ad.lat, ad.lon]}>
+                    <Marker
+                        key={ad.id}
+                        position={[ad.lat, ad.lon]}
+                        eventHandlers={{
+                        click: async (e) => {
+                            console.log('clicked');
+                            await updateViews(ad.id);
+                        },
+                    }}>
                         <Popup>
                             <SingleAd id={ad.id}/>
                         </Popup>
