@@ -57,11 +57,11 @@ export const AddForm = () => {
         }
 
     if (loading) {
-        return <h2>Trwa dodawanie ogłoszenia</h2>
+        return <h2>Trwa przesyłanie ogłoszenia...</h2>
     }
 
     if (id) {
-        return <h2>Twoje ogłoszenie "{form.name}" zostało poprawnie dodane do serwisu pod ID: {id}.</h2>
+        return <h2>Twoje ogłoszenie "{form.name}" zostało wysłane do weryfikacji Administratora.</h2>
     }
 
 

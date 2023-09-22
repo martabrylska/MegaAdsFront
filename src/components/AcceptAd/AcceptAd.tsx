@@ -24,5 +24,5 @@ export const AcceptAd = () => {
         return <h2>Trwa akceptowanie ogłoszenia...</h2>
     }
 
-    return <h2>Ogłoszenie zaakceptowane</h2>
+    return <h2>Ogłoszenie zaakceptowane.</h2>
 }
