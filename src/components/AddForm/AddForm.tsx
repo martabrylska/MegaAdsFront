@@ -2,6 +2,7 @@ import React, {SyntheticEvent, useState} from 'react';
 import "./AddForm.css"
 import {Btn} from "../common/Btn";
 import {geocode} from "../../utils/geocoding";
+import {Info} from "../common/Info";
 
 export const AddForm = () => {
     const [loading, setLoading] = useState(false);
@@ -57,19 +58,19 @@ export const AddForm = () => {
         }
 
     if (loading) {
-        return <h2>Trwa przesyłanie ogłoszenia...</h2>
+        return <Info text="The advertisement is being sent..."/>
     }
 
     if (id) {
-        return <h2>Twoje ogłoszenie "{form.name}" zostało wysłane do weryfikacji Administratora.</h2>
+        return <Info text={`Your advertisement "${form.name}" has been successfully sent for Admin verification.`}/>
     }
 
 
     return <form action="" className="add-form" onSubmit={saveAd}>
-        <h1>Dodawanie ogłoszenia</h1>
+        <h1>Add your AD.</h1>
         <p>
             <label>
-                Nazwa: <br/>
+                Name (required): <br/>
                 <input
                     type="text"
                     name="name"
@@ -82,7 +83,7 @@ export const AddForm = () => {
         </p>
         <p>
             <label>
-                Opis: <br/>
+                Description: <br/>
                 <textarea
                     name="description"
                     maxLength={999}
@@ -92,7 +93,7 @@ export const AddForm = () => {
         </p>
         <p>
             <label>
-                Cena: <br/>
+                Price (required): <br/>
                 <input
                     type="number"
                     name="price"
@@ -100,12 +101,12 @@ export const AddForm = () => {
                     maxLength={99}
                     value={form.price}
                     onChange={e => updateForm('price', Number(e.target.value))}/>
-                <small>Pozostaw zero w polu aby nie wyświetlać ceny</small>
+                <small>Leave 0 in the field to not display the price.</small>
             </label>
         </p>
         <p>
             <label>
-               Adres URL 1: <br/>
+                URL 1 address (required): <br/>
                 <input
                     type="url"
                     name="url1"
@@ -117,7 +118,7 @@ export const AddForm = () => {
         </p>
         <p>
             <label>
-                Adres URL 2: <br/>
+                URL 2 address: <br/>
                 <input
                     type="url"
                     name="url2"
@@ -128,7 +129,7 @@ export const AddForm = () => {
         </p>
         <p>
             <label>
-                Adres URL 3: <br/>
+                URL 3 address: <br/>
                 <input
                     type="url"
                     name="url3"
@@ -139,7 +140,7 @@ export const AddForm = () => {
         </p>
         <p>
             <label>
-                Adres fizyczny na mapie: <br/>
+                Physical address on the map (required): <br/>
                 <input
                     type="text"
                     name="address"
@@ -147,9 +148,10 @@ export const AddForm = () => {
                     maxLength={99}
                     value={form.address}
                     onChange={e => updateForm('address', e.target.value)}/>
+                <small>Format: City, Street no (ex. Warszawa, Główna 1)</small>
             </label>
         </p>
-        <Btn text="Zapisz"></Btn>
+        <Btn text="send"></Btn>
     </form>
 
 }

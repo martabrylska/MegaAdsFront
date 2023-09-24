@@ -8,6 +8,8 @@ header {
 }
 
 header h1 {
+    width: 200px;
+    text-align: center;
     font-size: 25px;
     font-weight: 200;
 }
