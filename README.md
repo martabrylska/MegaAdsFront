@@ -25,8 +25,8 @@ The app uses eg.:
 ### Screenshots 📺
 
 <div>
-  <img src="https://raw.githubusercontent.com/martabrylska/MegaAdsFront/main/public/app-screens/homepage.JPG" alt="home page" width="700px" height="auto"/>
-    <img src="https://raw.githubusercontent.com/martabrylska/MegaAdsFront/main/public/app-screens/add_ad.JPG" alt="add your ad page" width="700px" height="auto"/>
+  <img src="https://raw.githubusercontent.com/martabrylska/MegaAdsFront/main/public/app-screens/homepage.JPG" alt="home page" />
+    <img src="https://raw.githubusercontent.com/martabrylska/MegaAdsFront/main/public/app-screens/add_ad.JPG" alt="add your ad page"/>
 </div>
 
 ### Tech stack 🔧
