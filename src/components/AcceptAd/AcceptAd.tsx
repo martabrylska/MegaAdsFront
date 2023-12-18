@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
+import {Info} from "../common/Info";
 
 export const AcceptAd = () => {
     const [loading, setLoading] = useState(true);
@@ -21,8 +22,8 @@ export const AcceptAd = () => {
     },[]);
 
     if (loading) {
-        return <h2>Trwa akceptowanie ogłoszenia...</h2>
+        return <Info text="The advertisement is being verified..."/>
     }
 
-    return <h2>Ogłoszenie zaakceptowane</h2>
+    return <Info text="The advertisement is accepted."/>
 }

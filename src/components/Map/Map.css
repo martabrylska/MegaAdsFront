@@ -6,3 +6,8 @@
 .leaflet-container {
     height: 100%;
 }
+
+.leaflet-popup {
+    word-wrap: break-word;
+    width: 220px;
+}

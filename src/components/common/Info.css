@@ -1,0 +1,15 @@
+.info {
+    display: flex;
+    height: calc(100vh - 49px);
+    align-items: center;
+    justify-content: center;
+}
+
+.info h2 {
+    padding: 20px;
+    font-weight: normal;
+    background-color: #cde1cf;
+    border: 1px solid #b7b9b8;
+    border-radius: 5px;
+    font-size: 18px;
+}

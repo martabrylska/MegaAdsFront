@@ -15,11 +15,12 @@ export const Header = () => {
 
     return <header>
         <h1>
-            <strong>Mega</strong> Ogłoszenia
+            <a href="/"><strong>Mega</strong> ADS</a>
         </h1>
-        <Btn to="/add" text="Dodaj ogłoszenie"/>
+        <Btn to="/add" text="Add advertisement"/>
         <form className="search" onSubmit={setSearchFromLocalState}>
-            <input type="text" value={inputVal} onChange={e => setInputVal(e.target.value)}/> <Btn text="Szukaj"/>
+            <input type="text" value={inputVal} onChange={e => setInputVal(e.target.value)}/>
+            <Btn text="Search"/>
         </form>
     </header>
 }
